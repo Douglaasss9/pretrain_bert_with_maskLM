@@ -10,7 +10,7 @@ class Config(object):
     def __init__(self):
         
         # GPU配置
-        self.cuda_visible_devices = '1,2'                           # 可见的GPU
+        self.cuda_visible_devices = '0'                           # 可见的GPU
         self.device = 'cuda:0'                                      # master GPU
         self.port = str(random.randint(10000,60000))                # 多卡训练进程间通讯端口
         self.init_method = 'tcp://localhost:' + self.port           # 多卡训练的通讯地址
@@ -28,7 +28,7 @@ class Config(object):
         # 模型及路径配置
         self.initial_pretrain_model = 'bert-base-uncased'           # 加载的预训练分词器checkpoint，默认为英文。若要选择中文，替换成 bert-base-chinese
         self.initial_pretrain_tokenizer = 'bert-base-uncased'       # 加载的预训练模型checkpoint，默认为英文。若要选择中文，替换成 bert-base-chinese
-        self.path_model_save = './checkpoint/'                      # 模型保存路径
+        self.path_model_save = '/mnt/output/checkpoint/'                      # 模型保存路径
         self.path_datasets = './datasets/'                          # 数据集
         self.path_log = './logs/'
         
